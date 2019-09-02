@@ -4,6 +4,10 @@ using System.Text;
 
 namespace stoneeagle
 {
+    using System.Drawing;
+    using System.Linq;
+    using System.Runtime.CompilerServices;
+
     public static class Dijkstra
     {
 
@@ -65,13 +69,65 @@ namespace stoneeagle
                 for (int k = 0; k < matrix.GetLength(1); k++)
                 {
                     //put a single value
-                    Console.Write(matrix[i, k]);
+                    Console.Write($"{matrix[i, k]} ");
                 }
                 //next row
                 Console.WriteLine();
             }
         }
 
+        private static int MinofThree(int x, int y, int z)
+        {
+
+            var items = new List<int>();
+            if (x != 0) items.Add(x);
+            if (y != 0) items.Add(y);
+            if (z != 0) items.Add(z);
+            return items.Min();
+
+        }
+
+        public static Dictionary<int,int> TravelPathsDictionary { get; set; }
+
+        public static int[,] minCost(int[,] costPaths, int m, int n, rootPlayer player)
+        {
+            TravelPathsDictionary = new Dictionary<int, int>();
+            int i, j;
+            int[,] totalCost = new int[m , n ];
+            totalCost[0, 0] = costPaths[0, 0];
+
+            for (i = 1; i < m; i++)
+            {
+                totalCost[i, 0] = totalCost[i - 1, 0] + costPaths[i, 0];
+            }
+
+            for (j = 1; j < n; j++)
+            {
+                totalCost[0, j] = totalCost[0, j - 1] + costPaths[0, j];
+            }
+
+            for (i = 1; i < m; i++)
+            {
+                for (j = 1; j < n; j++)
+                {
+                    Console.WriteLine($"Evaluating 3 Positions 1:{totalCost[i - 1, j - 1]} , 2:{totalCost[i - 1, j]} , 3:{totalCost[i, j - 1]}");
+                    var i1 = Math.Min(totalCost[i - 1, j], totalCost[i, j - 1]);
+                    //MinofThree(
+                    //    totalCost[i - 1, j - 1],
+                    //    totalCost[i - 1, j],
+                    //    totalCost[i, j - 1]);
+                    var curPos = costPaths[i, j];
+                    var finalCost = i1 + curPos;
+                    Console.WriteLine($"Going to {i1}, totalCost {finalCost}");
+                    totalCost[i, j] = finalCost;
+
+                    // Console.Write($"{i},{j} => {totalCost[i, j]}");
+                }
+            }
+
+            var ret = totalCost[m - 1, n - 1];
+            return totalCost;
+        }
         //static void Main(string[] args)
         //{
         //    int[,] graph =  {

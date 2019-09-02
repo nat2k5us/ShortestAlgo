@@ -7,9 +7,6 @@
       <tile terrain="U" cost="7" />
       <tile terrain="I" cost="3" />
       <tile terrain="T" cost="1" />
-      <tile terrain="N" cost="1" />
-      <tile terrain="Y" cost="1" />
-      <tile terrain="E" cost="1" />
     </player>
     <player name="player2" >
       <tile terrain="Z" cost="1" />
@@ -17,9 +14,6 @@
       <tile terrain="U" cost="6" />
       <tile terrain="I" cost="3" />
       <tile terrain="T" cost="2" />
-      <tile terrain="N" cost="1" />
-      <tile terrain="Y" cost="1" />
-      <tile terrain="E" cost="1" />
     </player>
     <player name="player3" >
       <tile terrain="Z" cost="4" />
@@ -27,9 +21,6 @@
       <tile terrain="U" cost="1" />
       <tile terrain="I" cost="3" />
       <tile terrain="T" cost="6" />
-      <tile terrain="N" cost="1" />
-      <tile terrain="Y" cost="1" />
-      <tile terrain="E" cost="1" />
     </player>
     <player name="player4" >
       <tile terrain="Z" cost="1" />
@@ -38,8 +29,6 @@
       <tile terrain="I" cost="7" />
       <tile terrain="T" cost="4" />
       <tile terrain="Y" cost="1" />
-      <tile terrain="N" cost="1" />
-      <tile terrain="E" cost="1" />
     </player>
   </players>
   <map>

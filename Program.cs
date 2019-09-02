@@ -57,10 +57,7 @@ namespace stoneeagle
 
         public static int GetTileCost(rootPlayer player, string s)
         {
-            if (s.Equals("$")) return 1;
-            if (s.Equals("*")) return 0; // blocked
-
-
+            if (s.Equals("*")) return 0;
             foreach (var rootPlayerTile in player.tile)
             {
                 if (rootPlayerTile.terrain.Equals(s))
@@ -94,6 +91,8 @@ namespace stoneeagle
 
             return mapCost;
         }
+
+
         static void Main(string[] args)
         {
             var root = Deserialize();
@@ -106,6 +105,21 @@ namespace stoneeagle
                 Console.WriteLine($"{player}");
                 var costGraph = NavigateCost(player, map);
                 Dijkstra.Print2DArray(costGraph);
+                Console.WriteLine();
+
+                var res = Dijkstra.minCost(costGraph, 9, 9, player);
+                var query = from int item in res select item;
+                int start = 0;
+                for (int cols = 0; cols < MapColumns; cols++)
+                {
+                    var rowitems = query.Skip(start).Take(MapColumns);
+                    Console.WriteLine($"Total = {rowitems.Sum()}");
+                    start += MapColumns;
+                }
+
+               
+                Dijkstra.Print2DArray(res);
+                Console.WriteLine();
                 // Dijkstra.DijkstraAlgo(costGraph, 0, 9);
 
             }
