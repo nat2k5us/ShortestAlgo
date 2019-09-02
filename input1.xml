@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <players>
+    <player name="player1" >
+      <tile terrain="Z" cost="7" />
+      <tile terrain="C" cost="4" />
+      <tile terrain="U" cost="7" />
+      <tile terrain="I" cost="3" />
+      <tile terrain="T" cost="1" />
+      <tile terrain="N" cost="1" />
+      <tile terrain="Y" cost="1" />
+      <tile terrain="E" cost="1" />
+    </player>
+    <player name="player2" >
+      <tile terrain="Z" cost="1" />
+      <tile terrain="C" cost="6" />
+      <tile terrain="U" cost="6" />
+      <tile terrain="I" cost="3" />
+      <tile terrain="T" cost="2" />
+      <tile terrain="N" cost="1" />
+      <tile terrain="Y" cost="1" />
+      <tile terrain="E" cost="1" />
+    </player>
+    <player name="player3" >
+      <tile terrain="Z" cost="4" />
+      <tile terrain="C" cost="1" />
+      <tile terrain="U" cost="1" />
+      <tile terrain="I" cost="3" />
+      <tile terrain="T" cost="6" />
+      <tile terrain="N" cost="1" />
+      <tile terrain="Y" cost="1" />
+      <tile terrain="E" cost="1" />
+    </player>
+    <player name="player4" >
+      <tile terrain="Z" cost="1" />
+      <tile terrain="C" cost="7" />
+      <tile terrain="U" cost="3" />
+      <tile terrain="I" cost="7" />
+      <tile terrain="T" cost="4" />
+      <tile terrain="Y" cost="1" />
+      <tile terrain="N" cost="1" />
+      <tile terrain="E" cost="1" />
+    </player>
+  </players>
+  <map>
+    <row>$ZCZCZNZN</row>
+    <row>N*N*N*E*E</row>
+    <row>UCZZEEUYN</row>
+    <row>T*T*E*C*E</row>
+    <row>TETZUUZYY</row>
+    <row>E*T*N*U*Y</row>
+    <row>TTNENECEE</row>
+    <row>U*E*N*T*C</row>
+    <row>UTCYECYC@</row>
+  </map>
+</root>
